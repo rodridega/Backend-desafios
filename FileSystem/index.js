@@ -1,4 +1,4 @@
-const fs = require("fs");
+const { promises: fs } = require("fs");
 
 class Contenedor {
   constructor(file) {
@@ -7,8 +7,6 @@ class Contenedor {
 
   async save(producto) {
     const AllProducts = await this.getAll();
-
-    console.log(AllProducts);
 
     let newId;
     if (AllProducts.length === 0) {
@@ -34,13 +32,18 @@ class Contenedor {
     }
   }
 
+  async getById(id) {
+    const AllProducts = await this.getAll();
+    const producto = AllProducts.find((producto) => producto.id === id);
+    return producto;
+  }
+
   async getAll() {
     try {
       const data = await fs.readFile(this.file, "utf-8");
-      const dataParse = JSON.parse(data);
-      return dataParse;
+      return JSON.parse(data);
     } catch (error) {
-      throw new Error(error);
+      return [];
     }
   }
 
@@ -58,11 +61,15 @@ class Contenedor {
     try {
       await fs.writeFile(
         this.file,
-        JSON.stringify(productosFiltrados, null, 2),
-        (err) => {
-          if (err) throw err;
-        }
+        JSON.stringify(productosFiltrados, null, 2)
       );
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+  async deleteAll() {
+    try {
+      await fs.writeFile(this.file, "[]", "utf-8");
     } catch (error) {
       throw new Error(error);
     }
@@ -71,8 +78,18 @@ class Contenedor {
 
 const listaProductos = new Contenedor("./productos.txt");
 
+// Llamada a la funciones
+
 listaProductos.save({
-  title: "Laptop",
-  price: 1000,
-  thumbnail: "https://via.placeholder.com/150",
+  nombre: "Teclado",
+  precio: 300,
+  thumbnail: "https://picsum.photos/200/300",
 });
+
+listaProductos.getById(1).then((producto) => console.log(producto));
+
+listaProductos.getAll().then((productos) => console.log(productos));
+
+listaProductos.deleteById(1).then(() => console.log("Producto eliminado"));
+
+listaProductos.deleteAll().then(() => console.log("Se elimino todo"));

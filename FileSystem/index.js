@@ -5,6 +5,16 @@ class Contenedor {
     this.file = file;
   }
 
+  async getAll() {
+    try {
+      const data = await fs.readFile(this.file, "utf-8");
+      const response = await JSON.parse(data);
+      return response;
+    } catch (error) {
+      return [];
+    }
+  }
+
   async save(producto) {
     const AllProducts = await this.getAll();
 
@@ -38,21 +48,12 @@ class Contenedor {
     return producto;
   }
 
-  async getAll() {
-    try {
-      const data = await fs.readFile(this.file, "utf-8");
-      return JSON.parse(data);
-    } catch (error) {
-      return [];
-    }
-  }
-
   async deleteById(id) {
     const productos = await this.getAll();
 
-    const productosFiltrados = productos.filter((producto) => {
-      return producto.id != id;
-    });
+    const productosFiltrados = productos.filter(
+      (producto) => producto.id != id
+    );
 
     if (productosFiltrados.length == productos.length) {
       throw new Error("No se encontro el producto");
@@ -69,27 +70,77 @@ class Contenedor {
   }
   async deleteAll() {
     try {
-      await fs.writeFile(this.file, "[]", "utf-8");
+      await fs.writeFile(this.file, JSON.stringify([]), "utf-8");
+      return console.log("Se elimino todo");
     } catch (error) {
       throw new Error(error);
     }
   }
 }
 
-const listaProductos = new Contenedor("./productos.txt");
+const contenedor = new Contenedor("./productos.txt");
 
 // Llamada a la funciones
 
-listaProductos.save({
-  nombre: "Teclado",
-  precio: 300,
-  thumbnail: "https://picsum.photos/200/300",
-});
+const main = async () => {
+  //Eliminar todos los productos
+  await contenedor.deleteAll();
 
-listaProductos.getById(1).then((producto) => console.log(producto));
+  // TRAER TODOS LOS PRODUCTOS
 
-listaProductos.getAll().then((productos) => console.log(productos));
+  let AllProductos = await contenedor.getAll();
+  console.log(" Todos los productos", AllProductos);
 
-listaProductos.deleteById(1).then(() => console.log("Producto eliminado"));
+  // GUARDAR UN PRODUCTO
+  const id1 = await contenedor.save({
+    nombre: "Laptop",
+    precio: 1000,
+    cantidad: 1,
+    thumbnail: "https://via.placeholder.com/150",
+  });
+  const id2 = await contenedor.save({
+    nombre: "Teclado",
+    precio: 500,
+    cantidad: 1,
+    thumbnail: "https://via.placeholder.com/150",
+  });
 
-listaProductos.deleteAll().then(() => console.log("Se elimino todo"));
+  // TRAER TODOS LOS PRODUCTOS
+  AllProductos = await contenedor.getAll();
+  console.log(" Todos los productos", AllProductos);
+
+  // TRAER UN PRODUCTO POR ID
+  let productoById = await contenedor.getById(id1);
+  console.log("Producto por id 1", productoById);
+  productoById = await contenedor.getById(id2);
+  console.log("Producto por id 2", productoById);
+
+
+  // AGREGAR UN PRODUCTO
+  const id3 = await contenedor.save({
+    nombre: "Mouse",
+    precio: 200,
+    cantidad: 1,
+    thumbnail: "https://via.placeholder.com/150",
+  });
+
+  // TRAER TODOS LOS PRODUCTOS
+  AllProductos = await contenedor.getAll();
+  console.log(" Todos los productos", AllProductos);
+
+  //AGREGAR UN PRODUCTO
+  const id4 = await contenedor.save({
+    nombre: "Monitor",
+    precio: 500,
+    cantidad: 1,
+    thumbnail: "https://via.placeholder.com/150",
+  });
+  // ELIMINAR UN PRODUCTO CON EL ID 2
+  AllProductos = await contenedor.deleteById(id2);
+
+  // TRAER TODOS LOS PRODUCTOS SIN EL PRODUCTO ELIMINADO CON EL ID 2
+  AllProductos = await contenedor.getAll();
+  console.log(" Todos los productos", AllProductos);
+};
+
+main();

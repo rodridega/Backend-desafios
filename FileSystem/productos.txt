@@ -1,8 +1,23 @@
 [
   {
     "id": 1,
-    "nombre": "Monitor",
+    "nombre": "Laptop",
     "precio": 1000,
-    "thumbnail": "laptop.jpg"
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 3,
+    "nombre": "Mouse",
+    "precio": 200,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor",
+    "precio": 500,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
   }
 ]

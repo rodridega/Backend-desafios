@@ -1,8 +1,9 @@
 [
   {
     "id": 1,
-    "nombre": "Monitor",
-    "precio": 1000,
-    "thumbnail": "laptop.jpg"
+    "nombre": "Mouse",
+    "precio": 200,
+    "thumbnail": "https://picsum.photos/200/300"
   }
+]
 ]

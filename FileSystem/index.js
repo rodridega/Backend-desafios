@@ -19,14 +19,10 @@ class Contenedor {
     AllProducts.push({ id: newId, ...producto });
 
     try {
-      await fs.writeFile(
-        this.file,
-        JSON.stringify(AllProducts, null, 2),
-        (err) => {
-          if (err) throw err;
-        }
-      );
-      return newId;
+     await fs.writeFile(this.file, JSON.stringify(AllProducts, null, 2), (err) => {
+        if (err) throw err;
+      });
+      return console.log(newId);
     } catch (error) {
       throw new Error(error);
     }
@@ -41,7 +37,8 @@ class Contenedor {
   async getAll() {
     try {
       const data = await fs.readFile(this.file, "utf-8");
-      return JSON.parse(data);
+      const dataParseada = JSON.parse(data);
+      return dataParseada;
     } catch (error) {
       return [];
     }
@@ -79,17 +76,24 @@ class Contenedor {
 const listaProductos = new Contenedor("./productos.txt");
 
 // Llamada a la funciones
-
+/* 
 listaProductos.save({
   nombre: "Teclado",
   precio: 300,
   thumbnail: "https://picsum.photos/200/300",
 });
 
-listaProductos.getById(1).then((producto) => console.log(producto));
+listaProductos.save({
+  nombre: "Mouse",
+  precio: 200,
+  thumbnail: "https://picsum.photos/200/300",
+});
+ */
 
-listaProductos.getAll().then((productos) => console.log(productos));
+module.exports = Contenedor
+/* listaProductos.getById(2).then((producto) => console.log(producto));
 
-listaProductos.deleteById(1).then(() => console.log("Producto eliminado"));
+listaProductos.getAll().then((productos) => console.log(productos)); */
 
-listaProductos.deleteAll().then(() => console.log("Se elimino todo"));
+/* listaProductos.deleteById(1).then(() => console.log("Producto eliminado"));
+ */

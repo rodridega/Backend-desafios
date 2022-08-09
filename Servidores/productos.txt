@@ -1,0 +1,290 @@
+[
+  {
+    "id": 1,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 2,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 3,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 4,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 5,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 6,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 7,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 8,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 9,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 10,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 11,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 12,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 13,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 14,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 15,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 16,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 17,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 18,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 19,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 20,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 21,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 22,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 23,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 24,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 25,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 26,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 27,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 28,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 29,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 30,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 31,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 32,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 33,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 34,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 35,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 36,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 37,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 38,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 39,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 40,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 41,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 42,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 43,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 44,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 45,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 46,
+    "nombre": "Teclado",
+    "precio": 300,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 47,
+    "nombre": "Mouse",
+    "precio": 40,
+    "thumbnail": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 48,
+    "nombre": "Parlante",
+    "precio": 4000,
+    "thumbnail": "https://picsum.photos/200/300"
+  }
+]

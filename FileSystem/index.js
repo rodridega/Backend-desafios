@@ -108,6 +108,5 @@ listaProductos.getById(1).then((producto) => console.log(producto));
   // TRAER TODOS LOS PRODUCTOS SIN EL PRODUCTO ELIMINADO CON EL ID 2
   AllProductos = await contenedor.getAll();
   console.log(" Todos los productos", AllProductos);
-};
 
 listaProductos.deleteAll().then(() => console.log("Se elimino todo"));

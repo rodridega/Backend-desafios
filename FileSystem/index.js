@@ -5,6 +5,16 @@ class Contenedor {
     this.file = file;
   }
 
+  async getAll() {
+    try {
+      const data = await fs.readFile(this.file, "utf-8");
+      const response = await JSON.parse(data);
+      return response;
+    } catch (error) {
+      return [];
+    }
+  }
+
   async save(producto) {
     const AllProducts = await this.getAll();
 
@@ -37,8 +47,7 @@ class Contenedor {
   async getAll() {
     try {
       const data = await fs.readFile(this.file, "utf-8");
-      const dataParseada = JSON.parse(data);
-      return dataParseada;
+      return JSON.parse(data);
     } catch (error) {
       return [];
     }
@@ -47,9 +56,9 @@ class Contenedor {
   async deleteById(id) {
     const productos = await this.getAll();
 
-    const productosFiltrados = productos.filter((producto) => {
-      return producto.id != id;
-    });
+    const productosFiltrados = productos.filter(
+      (producto) => producto.id != id
+    );
 
     if (productosFiltrados.length == productos.length) {
       throw new Error("No se encontro el producto");
@@ -66,34 +75,39 @@ class Contenedor {
   }
   async deleteAll() {
     try {
-      await fs.writeFile(this.file, "[]", "utf-8");
+      await fs.writeFile(this.file, JSON.stringify([]), "utf-8");
+      return console.log("Se elimino todo");
     } catch (error) {
       throw new Error(error);
     }
   }
 }
 
-const listaProductos = new Contenedor("./productos.txt");
+const contenedor = new Contenedor("./productos.txt");
 
 // Llamada a la funciones
-/* 
+
 listaProductos.save({
   nombre: "Teclado",
   precio: 300,
   thumbnail: "https://picsum.photos/200/300",
 });
 
-listaProductos.save({
-  nombre: "Mouse",
-  precio: 200,
-  thumbnail: "https://picsum.photos/200/300",
-});
- */
+listaProductos.getById(1).then((producto) => console.log(producto));
 
-module.exports = Contenedor
-/* listaProductos.getById(2).then((producto) => console.log(producto));
+  //AGREGAR UN PRODUCTO
+  const id4 = await contenedor.save({
+    nombre: "Monitor",
+    precio: 500,
+    cantidad: 1,
+    thumbnail: "https://via.placeholder.com/150",
+  });
+  // ELIMINAR UN PRODUCTO CON EL ID 2
+  AllProductos = await contenedor.deleteById(id2);
 
-listaProductos.getAll().then((productos) => console.log(productos)); */
+  // TRAER TODOS LOS PRODUCTOS SIN EL PRODUCTO ELIMINADO CON EL ID 2
+  AllProductos = await contenedor.getAll();
+  console.log(" Todos los productos", AllProductos);
+};
 
-/* listaProductos.deleteById(1).then(() => console.log("Producto eliminado"));
- */
+listaProductos.deleteAll().then(() => console.log("Se elimino todo"));

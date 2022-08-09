@@ -1,9 +1,30 @@
 [
   {
     "id": 1,
+<<<<<<< HEAD
     "nombre": "Mouse",
     "precio": 200,
     "thumbnail": "https://picsum.photos/200/300"
+=======
+    "nombre": "Laptop",
+    "precio": 1000,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 3,
+    "nombre": "Mouse",
+    "precio": 200,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor",
+    "precio": 500,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
+>>>>>>> 4f9437937d82b327f03e726fdc6fed8bd01a811d
   }
 ]
 ]

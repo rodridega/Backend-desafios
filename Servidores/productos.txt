@@ -7,15 +7,30 @@
   },
   {
     "id": 2,
-    "nombre": "Mouse",
-    "precio": 40,
-    "thumbnail": "https://picsum.photos/200/300"
+    "nombre": "Laptop",
+    "precio": 1000,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
   },
   {
     "id": 3,
-    "nombre": "Parlante",
-    "precio": 4000,
-    "thumbnail": "https://picsum.photos/200/300"
+    "nombre": "Teclado",
+    "precio": 500,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
   },
-
+  {
+    "id": 4,
+    "nombre": "Mouse",
+    "precio": 200,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 5,
+    "nombre": "Monitor",
+    "precio": 500,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
+  }
 ]

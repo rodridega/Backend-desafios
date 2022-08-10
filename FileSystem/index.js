@@ -61,7 +61,7 @@ class Contenedor {
     );
 
     if (productosFiltrados.length == productos.length) {
-      throw new Error("No se encontro el producto");
+      console.log("No se encontro el producto")
     }
 
     try {
@@ -87,13 +87,51 @@ const contenedor = new Contenedor("./productos.txt");
 
 // Llamada a la funciones
 
-listaProductos.save({
-  nombre: "Teclado",
-  precio: 300,
-  thumbnail: "https://picsum.photos/200/300",
-});
+const main = async () => {
+  //Eliminar todos los productos
+  await contenedor.deleteAll();
 
-listaProductos.getById(1).then((producto) => console.log(producto));
+  // TRAER TODOS LOS PRODUCTOS
+
+  let AllProductos = await contenedor.getAll();
+  console.log(" Todos los productos", AllProductos);
+
+  // GUARDAR UN PRODUCTO
+  const id1 = await contenedor.save({
+    nombre: "Laptop",
+    precio: 1000,
+    cantidad: 1,
+    thumbnail: "https://via.placeholder.com/150",
+  });
+  const id2 = await contenedor.save({
+    nombre: "Teclado",
+    precio: 500,
+    cantidad: 1,
+    thumbnail: "https://via.placeholder.com/150",
+  });
+
+  // TRAER TODOS LOS PRODUCTOS
+  AllProductos = await contenedor.getAll();
+  console.log(" Todos los productos", AllProductos);
+
+  // TRAER UN PRODUCTO POR ID
+  let productoById = await contenedor.getById(id1);
+  console.log("Producto por id 1", productoById);
+  productoById = await contenedor.getById(id2);
+  console.log("Producto por id 2", productoById);
+
+
+  // AGREGAR UN PRODUCTO
+  const id3 = await contenedor.save({
+    nombre: "Mouse",
+    precio: 200,
+    cantidad: 1,
+    thumbnail: "https://via.placeholder.com/150",
+  });
+
+  // TRAER TODOS LOS PRODUCTOS
+  AllProductos = await contenedor.getAll();
+  console.log(" Todos los productos", AllProductos);
 
   //AGREGAR UN PRODUCTO
   const id4 = await contenedor.save({
@@ -108,5 +146,8 @@ listaProductos.getById(1).then((producto) => console.log(producto));
   // TRAER TODOS LOS PRODUCTOS SIN EL PRODUCTO ELIMINADO CON EL ID 2
   AllProductos = await contenedor.getAll();
   console.log(" Todos los productos", AllProductos);
+};
 
-listaProductos.deleteAll().then(() => console.log("Se elimino todo"));
+main();
+
+module.exports = Contenedor

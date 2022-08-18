@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Desafío 4</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box-wrapper">
+        <div class="box">
+          <h2>Agregar Productos</h2>
+          <form id="formProducto">
+            <div>
+              <input type="text" id="p_title" placeholder="Title" />
+            </div>
+            <div>
+              <input type="text" id="p_price" placeholder="Price" />
+            </div>
+            <div>
+              <input
+                type="text"
+                id="p_thumbnail"
+                placeholder="Thumbnail (url)"
+              />
+            </div>
+          </form>
+          <button onclick="sendProducto()">Add Producto</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

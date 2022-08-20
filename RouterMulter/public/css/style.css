@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 1s;
+    text-decoration: none;
+}
+
+html,
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 0.2em;
+    font-size: 0.98em;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "nav-bar"
+        "letra"
+        "box"
+        "footer";
+}
+
+
+.box-wrapper {
+    height: 480px;
+    position: relative;
+}
+
+.box {
+    grid-area: box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: black;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, .1);
+    box-shadow: 0 3px 60px rgba(57, 73, 76, 0.35);
+}
+
+.box h2 {
+    margin: 0 0 40px;
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.box input {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999;
+}
+
+.box button {
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    background: yellow;
+    color: black;
+    width: 100%;
+    padding: 10px;
+}
+
+.box form div {
+    position: relative;
+}

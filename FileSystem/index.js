@@ -29,14 +29,10 @@ class Contenedor {
     AllProducts.push({ id: newId, ...producto });
 
     try {
-      await fs.writeFile(
-        this.file,
-        JSON.stringify(AllProducts, null, 2),
-        (err) => {
-          if (err) throw err;
-        }
-      );
-      return newId;
+     await fs.writeFile(this.file, JSON.stringify(AllProducts, null, 2), (err) => {
+        if (err) throw err;
+      });
+      return console.log(newId);
     } catch (error) {
       throw new Error(error);
     }
@@ -48,6 +44,15 @@ class Contenedor {
     return producto;
   }
 
+  async getAll() {
+    try {
+      const data = await fs.readFile(this.file, "utf-8");
+      return JSON.parse(data);
+    } catch (error) {
+      return [];
+    }
+  }
+
   async deleteById(id) {
     const productos = await this.getAll();
 
@@ -56,7 +61,7 @@ class Contenedor {
     );
 
     if (productosFiltrados.length == productos.length) {
-      throw new Error("No se encontro el producto");
+      console.log("No se encontro el producto")
     }
 
     try {
@@ -144,3 +149,5 @@ const main = async () => {
 };
 
 main();
+
+module.exports = Contenedor

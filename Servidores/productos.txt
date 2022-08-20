@@ -1,11 +1,12 @@
 [
   {
     "id": 1,
-<<<<<<< HEAD
-    "nombre": "Mouse",
-    "precio": 200,
+    "nombre": "Teclado",
+    "precio": 300,
     "thumbnail": "https://picsum.photos/200/300"
-=======
+  },
+  {
+    "id": 2,
     "nombre": "Laptop",
     "precio": 1000,
     "cantidad": 1,
@@ -13,18 +14,23 @@
   },
   {
     "id": 3,
+    "nombre": "Teclado",
+    "precio": 500,
+    "cantidad": 1,
+    "thumbnail": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 4,
     "nombre": "Mouse",
     "precio": 200,
     "cantidad": 1,
     "thumbnail": "https://via.placeholder.com/150"
   },
   {
-    "id": 4,
+    "id": 5,
     "nombre": "Monitor",
     "precio": 500,
     "cantidad": 1,
     "thumbnail": "https://via.placeholder.com/150"
->>>>>>> 4f9437937d82b327f03e726fdc6fed8bd01a811d
   }
-]
 ]
